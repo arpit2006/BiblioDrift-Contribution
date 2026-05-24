@@ -24,6 +24,15 @@
     --control-border: rgba(93, 64, 55, 0.14);
     --control-focus-ring: rgba(212, 175, 55, 0.24);
     --control-hover: rgba(255, 255, 255, 0.96);
+    --type-body-size: 1rem;
+    --type-body-line-height: 1.7;
+    --type-copy-size: 1.08rem;
+    --type-copy-line-height: 1.85;
+    --type-display-size: clamp(2.5rem, 8vw, 4.5rem);
+    --type-heading-2-size: clamp(1.4rem, 2.3vw, 1.75rem);
+    --type-heading-3-size: 1.15rem;
+    --type-section-meta-size: 0.95rem;
+    --type-section-line-height: 1.35;
     --radius-panel: 24px;
     --radius-control: 18px;
 
@@ -140,8 +149,8 @@ html, body {
 /* Base text */
 body, p, li, dd, dt {
     font-family: "Georgia", serif;
-    font-size: 1rem;
-    line-height: 1.65;
+    font-size: var(--type-body-size);
+    line-height: var(--type-body-line-height);
     color: var(--text-main);
 }
 
@@ -150,13 +159,13 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "Playfair Display", serif;
     color: var(--text-main);
     margin: 0 0 0.5rem 0;
-    line-height: 1.15;
+    line-height: 1.12;
     letter-spacing: 0.2px;
 }
 
-h1 { font-size: clamp(1.6rem, 2.8vw, 2.4rem); }
-h2 { font-size: clamp(1.25rem, 2.2vw, 1.6rem); }
-h3 { font-size: 1.15rem; }
+h1 { font-size: clamp(1.85rem, 3vw, 2.8rem); }
+h2 { font-size: var(--type-heading-2-size); }
+h3 { font-size: var(--type-heading-3-size); }
 
 /* Navigation & links */
 .nav-links a {
@@ -621,19 +630,19 @@ textarea:focus {
 
 
 .hero h1 {
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
-    margin-bottom: 1.5rem;
+    font-size: var(--type-display-size);
+    margin-bottom: 1.1rem;
     font-style: italic;
-    line-height: 1.2;
-    letter-spacing: 0.5px;
+    line-height: 1.06;
+    letter-spacing: 0.35px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .hero p {
     color: var(--text-muted);
-    font-size: 1.2rem;
-    line-height: 1.8;
-    max-width: 55ch;
+    font-size: var(--type-copy-size);
+    line-height: var(--type-copy-line-height);
+    max-width: 58ch;
     margin: 0 auto;
 }
 
@@ -651,6 +660,18 @@ textarea:focus {
     align-items: baseline;
     flex-wrap: wrap;
     gap: 1rem;
+}
+
+.section-header h2 {
+    margin: 0;
+    font-size: var(--type-heading-2-size);
+    line-height: 1.15;
+}
+
+.section-header span {
+    color: var(--text-muted);
+    font-size: var(--type-section-meta-size);
+    line-height: var(--type-section-line-height);
 }
 
 .curated-row {
